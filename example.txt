@@ -1,4 +1,30 @@
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+public class Test1 extends MIDlet implements CommandListener
+{
+  Display disp;
+  TextBox t1;
+  Command cmd;
+  public Test1()
+  {
+    disp=Display.getDisplay(this);
+    t1=new TextBox("demoapp","test",40,TextField.ANY);
+   cmd=new Command("type",Command.OK,0);
+   t1.addCommand(cmd);
+  }
+ public void startApp()
+ {
+    disp.setCurrent(t1);
+ }
+ public void pauseApp()
+ {
+ }
+ public void destroyApp(boolean b)
+ {
+ }
+ public void CommandAction(Command c1,Displayable d1)
+ {
+  t1.setString(" "+disp.numcolors());
+ }
 
-hello
-hello
-hello
+}
